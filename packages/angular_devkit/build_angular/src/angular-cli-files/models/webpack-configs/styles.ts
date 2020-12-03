@@ -113,12 +113,7 @@ export function getStylesConfig(wco: WebpackConfigOptions) {
   }
 
   let sassImplementation: {} | undefined;
-  try {
-    // tslint:disable-next-line:no-implicit-dependencies
-    sassImplementation = require('node-sass');
-  } catch {
-    sassImplementation = require('sass');
-  }
+  sassImplementation = require('sass');
 
   // set base rules to derive final rules from
   const baseRules: { test: RegExp, use: webpack.RuleSetLoader[] }[] = [
